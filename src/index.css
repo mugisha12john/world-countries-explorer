@@ -1,1 +1,13 @@
 @import "tailwindcss";
+@theme {
+  --color-dark-element: hsl(209, 23%, 22%); /* Blue 900 */
+  --color-dark-bg: hsl(207, 26%, 17%); /* Blue 950 */
+  --color-light-text: hsl(200, 15%, 8%); /* Grey 950 */
+  --color-light-input: hsl(0, 0%, 50%); /* Grey 400 */
+  --color-light-bg: hsl(0, 0%, 99%); /* Grey 50 */
+  --color-pure-white: hsl(0, 100%, 100%); /* White */
+}
+body {
+  @apply bg-light-bg text-light-text dark:bg-dark-bg dark:text-pure-white transition-colors duration-200 min-h-screen;
+}
+@variant dark (&:where(.dark, .dark *));

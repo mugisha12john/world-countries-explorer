@@ -1,9 +1,12 @@
 import Header from "./components/Header";
+import { ThemeProvider } from "./components/theme/ThemeProvider";
 
 function App() {
   return (
     <>
-      <Header />
+      <ThemeProvider>
+        <Header />
+      </ThemeProvider>
     </>
   );
 }
