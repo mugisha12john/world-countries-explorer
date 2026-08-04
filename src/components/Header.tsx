@@ -1,6 +1,6 @@
 import MoonIcon from "../assets/MoonIcon";
 import SunIcon from "../assets/SunIcon";
-import { useTheme } from "./theme/ThemeProvider";
+import { useTheme } from "../theme/ThemeProvider";
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
