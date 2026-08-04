@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import SearchForm from "./components/SearchForm";
 import { ThemeProvider } from "./components/theme/ThemeProvider";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <ThemeProvider>
         <Header />
+        <SearchForm />
       </ThemeProvider>
     </>
   );
