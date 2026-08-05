@@ -67,7 +67,7 @@ export default function Main() {
       <div className="ml-8 mt-10 grid grid-cols-1  gap-10 md:grid-cols-2 lg:grid-cols-4">
         {currentCountries?.map((country) => {
           return (
-            <div key={country.name}>
+            <div key={country.alpha3Code}>
               <CountryCard singleCountry={country} />
             </div>
           );

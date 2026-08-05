@@ -25,6 +25,7 @@ export const SearchForm = ({
               name="searchCountry"
               value={searchedCountry}
               onChange={handleSearch}
+              aria-label="search input field"
               className="outline-0 text-lg font-semibold text-light-text dark:text-light-bg"
             />
           </div>
@@ -34,6 +35,7 @@ export const SearchForm = ({
             name="region"
             value={getRegion}
             onChange={handleRegion}
+            aria-label="select region "
             className="w-full outline-0 dark:bg-dark-element"
           >
             <option value="">Filter by Region</option>
