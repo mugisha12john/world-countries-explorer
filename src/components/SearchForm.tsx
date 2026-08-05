@@ -1,11 +1,18 @@
 import SearchIcon from "../assets/SearchIcon";
 
+interface SearchFormProps {
+  searchedCountry: string;
+  handleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  getRegion: string;
+  handleRegion: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
 export const SearchForm = ({
   searchedCountry,
   handleSearch,
   getRegion,
   handleRegion,
-}) => {
+}: SearchFormProps) => {
   return (
     <>
       <div className="flex flex-col m-5 md:flex-row md:justify-between">
