@@ -1,5 +1,4 @@
 export default function CountryCard({ singleCountry }) {
-  console.log(singleCountry);
   return (
     <>
       <div className="w-80 dark:bg-dark-element bg-light-bg shadow-2xl rounded-lg overflow-hidden flex flex-col">
