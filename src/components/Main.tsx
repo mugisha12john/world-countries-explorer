@@ -83,9 +83,12 @@ export default function Main() {
             Prev
           </button>
 
-          <span className="text-gray-300">
-            Page <strong className="text-white">{currentPage}</strong> of{" "}
-            {totalPages}
+          <span className="dark:text-gray-300 text-light-text">
+            Page{" "}
+            <strong className="dark:text-gray-300 text-light-text">
+              {currentPage}
+            </strong>{" "}
+            of {totalPages}
           </span>
 
           <button

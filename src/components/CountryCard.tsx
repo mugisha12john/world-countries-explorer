@@ -7,7 +7,7 @@ interface CountryCardProps {
 export default function CountryCard({ singleCountry }: CountryCardProps) {
   return (
     <>
-      <div className="w-80 dark:bg-dark-element bg-light-bg shadow-2xl rounded-lg overflow-hidden flex flex-col">
+      <div className="w-80 dark:bg-dark-element bg-light-bg-box shadow-2xl rounded-lg overflow-hidden flex flex-col">
         <div className="w-full h-40 dark:bg-dark-element bg-light-input overflow-hidden">
           <img
             src={singleCountry.flags.svg}

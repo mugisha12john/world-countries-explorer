@@ -5,6 +5,7 @@
   --color-light-text: hsl(200, 15%, 8%); /* Grey 950 */
   --color-light-input: hsl(0, 0%, 50%); /* Grey 400 */
   --color-light-bg: hsl(0, 0%, 99%); /* Grey 50 */
+  --color-light-bg-box: #dcdedc;
   --color-pure-white: hsl(0, 100%, 100%); /* White */
 }
 body {
