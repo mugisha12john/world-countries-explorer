@@ -25,7 +25,7 @@ export const SearchForm = ({
               name="searchCountry"
               value={searchedCountry}
               onChange={handleSearch}
-              className="outline-0 font-lg font-semibold text-light-bg"
+              className="outline-0 font-lg font-semibold text-light-text dark:text-light-bg"
             />
           </div>
         </div>

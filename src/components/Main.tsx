@@ -4,6 +4,7 @@ import CountryCard from "./CountryCard";
 import Error from "./Error";
 import Loading from "./Loading";
 import SearchForm from "./SearchForm";
+import type { Country } from "../types/types";
 
 export default function Main() {
   const { data, loading, error } = useFetch({
@@ -15,18 +16,10 @@ export default function Main() {
 
   const itemsPerPage = 12;
 
-  const countryList = Array.isArray(data)
-    ? data
-    : Array.isArray(data?.data)
-      ? data.data
-      : [];
-
   const filteredCountries = useMemo(() => {
-    return countryList.filter((country: any) => {
+    return data?.filter((country: Country) => {
       const countryName =
-        typeof country.name === "string"
-          ? country.name
-          : country.name?.common || "";
+        typeof country.name === "string" ? country.name : country.capital || "";
       const matchesSearch = countryName
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
@@ -39,18 +32,17 @@ export default function Main() {
   }, [data, searchQuery, selectedRegion]);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  console.log(filteredCountries);
-  const currentCountries = filteredCountries.slice(
+  const currentCountries = filteredCountries?.slice(
     indexOfFirstItem,
     indexOfLastItem,
   );
-  const totalPages = Math.ceil(filteredCountries.length / itemsPerPage);
-  const handleSearch = (e) => {
+  const totalPages = Math.ceil(filteredCountries?.length ?? 1 / itemsPerPage);
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     setCurrentPage(1);
   };
 
-  const handleRegion = (e) => {
+  const handleRegion = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedRegion(e.target.value);
     setCurrentPage(1);
   };
@@ -68,9 +60,17 @@ export default function Main() {
         getRegion={selectedRegion}
         handleRegion={handleRegion}
       />
+      {currentCountries?.length === 0 && (
+        <Error error="No country available  for specified filters" />
+      )}
       <div className="ml-8 mt-10 grid grid-cols-1  gap-10 md:grid-cols-2 lg:grid-cols-4">
-        {currentCountries.map((j) => {
-          return <CountryCard j={j} />;
+        {currentCountries?.map((country) => {
+          console.log(country);
+          return (
+            <div key={country.name}>
+              <CountryCard singleCountry={country} />
+            </div>
+          );
         })}
       </div>
       {totalPages > 1 && (

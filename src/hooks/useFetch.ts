@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import type { Country } from "../types/types";
 
 interface UseFetchProps {
   url: string;
 }
 
-const useFetch = <T = unknown>({ url }: UseFetchProps) => {
-  const [data, setData] = useState<T | null>(null);
+const useFetch = ({ url }: UseFetchProps) => {
+  const [data, setData] = useState<Country[] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -15,7 +16,7 @@ const useFetch = <T = unknown>({ url }: UseFetchProps) => {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get<T>(url);
+        const response = await axios.get(url);
         setData(response.data);
       } catch (err: unknown) {
         if (axios.isAxiosError(err)) {
