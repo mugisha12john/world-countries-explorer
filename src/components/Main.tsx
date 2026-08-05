@@ -18,9 +18,7 @@ export default function Main() {
 
   const filteredCountries = useMemo(() => {
     return data?.filter((country: Country) => {
-      const countryName =
-        typeof country.name === "string" ? country.name : country.capital || "";
-      const matchesSearch = countryName
+      const matchesSearch = country.name
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
       const matchesRegion = selectedRegion
@@ -36,7 +34,10 @@ export default function Main() {
     indexOfFirstItem,
     indexOfLastItem,
   );
-  const totalPages = Math.ceil(filteredCountries?.length ?? 1 / itemsPerPage);
+  const totalPages = Math.max(
+    1,
+    Math.ceil((filteredCountries?.length ?? 0) / itemsPerPage),
+  );
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     setCurrentPage(1);
@@ -61,7 +62,7 @@ export default function Main() {
         handleRegion={handleRegion}
       />
       {currentCountries?.length === 0 && (
-        <Error error="No country available  for specified filters" />
+        <Error error="No countries available for the selected filters." />
       )}
       <div className="ml-8 mt-10 grid grid-cols-1  gap-10 md:grid-cols-2 lg:grid-cols-4">
         {currentCountries?.map((country) => {

@@ -16,7 +16,7 @@ const useFetch = ({ url }: UseFetchProps) => {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get(url);
+        const response = await axios.get<Country[]>(url);
         setData(response.data);
       } catch (err: unknown) {
         if (axios.isAxiosError(err)) {

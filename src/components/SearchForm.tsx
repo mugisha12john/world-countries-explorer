@@ -21,11 +21,11 @@ export const SearchForm = ({
             <SearchIcon />
             <input
               type="text"
-              placeholder="Search for a country.."
+              placeholder="Search for a country..."
               name="searchCountry"
               value={searchedCountry}
               onChange={handleSearch}
-              className="outline-0 font-lg font-semibold text-light-text dark:text-light-bg"
+              className="outline-0 text-lg font-semibold text-light-text dark:text-light-bg"
             />
           </div>
         </div>

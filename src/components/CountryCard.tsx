@@ -1,4 +1,10 @@
-export default function CountryCard({ singleCountry }) {
+import type { Country } from "../types/types";
+
+type CountryLike = Omit<Country, "capital"> & { capital?: string | string[] };
+interface CountryCardProps {
+  singleCountry: CountryLike;
+}
+export default function CountryCard({ singleCountry }: CountryCardProps) {
   return (
     <>
       <div className="w-80 dark:bg-dark-element bg-light-bg shadow-2xl rounded-lg overflow-hidden flex flex-col">
