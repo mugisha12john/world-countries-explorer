@@ -68,18 +68,25 @@ export default function SingleCountry() {
                     Rwandan Franc (RWF)
                   </span>
                 </div>
-
+                <div>
+                  <span className="dark:text-slate-400 font-bold">Area:</span>{" "}
+                  <span className="font-medium dark:text-slate-200 ">
+                    26,3902 km
+                  </span>
+                </div>
+                <div>
+                  <span className="dark:text-slate-400 font-bold">
+                    Density:
+                  </span>{" "}
+                  <span className="font-medium dark:text-slate-200 ">
+                    543 km
+                  </span>
+                </div>
                 <div>
                   <span className="dark:text-slate-400 font-bold">Region:</span>{" "}
                   <span className="font-medium dark:text-slate-200 ">
                     Africa
                   </span>
-                </div>
-                <div>
-                  <span className="dark:text-slate-400 font-bold">
-                    Calling Code:
-                  </span>{" "}
-                  <span className="font-medium dark:text-slate-200 ">+250</span>
                 </div>
 
                 <div>
@@ -92,11 +99,52 @@ export default function SingleCountry() {
                 </div>
                 <div>
                   <span className="dark:text-slate-400 font-bold">
+                    Demonyn:
+                  </span>{" "}
+                  <span className="font-medium dark:text-slate-200 ">
+                    Rwandan
+                  </span>
+                </div>
+                <div>
+                  <span className="dark:text-slate-400 font-bold">
+                    Top level domain:
+                  </span>{" "}
+                  <span className="font-medium dark:text-slate-200 ">.rw</span>
+                </div>
+                <div>
+                  <span className="dark:text-slate-400 font-bold">
+                    Calling Code:
+                  </span>{" "}
+                  <span className="font-medium dark:text-slate-200 ">+250</span>
+                </div>
+
+                <div>
+                  <span className="dark:text-slate-400 font-bold">
                     ISO / Numeric:
                   </span>{" "}
                   <span className="font-medium dark:text-slate-200 ">
                     RW / 646
                   </span>
+                </div>
+              </div>
+              <div className="dark:bg-[#242c3d] p-4 rounded-lg border border-slate-700/40 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl">⛅</div>
+                  <div>
+                    <p className="text-xs dark:text-slate-400 uppercase tracking-wider font-semibold">
+                      Capital Weather (Kigali)
+                    </p>
+                    <p className="text-lg font-bold tdark/l=:ext-slate-100">
+                      24°C{" "}
+                      <span className="text-xs font-normal dark:text-slate-400">
+                        | Partively Cloudy
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right text-xs dark:text-slate-400 space-y-0.5">
+                  <p>Humidity: 62%</p>
+                  <p>Timezone: UTC+2</p>
                 </div>
               </div>
               <div className="space-y-2 pt-2  md:flex md:gap-2 ">
