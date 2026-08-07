@@ -212,62 +212,6 @@ export default function SingleCountry() {
           </div>
         </div>
       </div>
-      {/* <main className="flex gap-10 ml-10 mt-10 flex-col md:flex-row">
-        <div className="w-120 h-80 bg-light-input dark:bg-dark-element"></div>
-        <section className="w-120 h-80 bg-light-input dark:bg-dark-element">
-          <h1 className="text-3xl font-bold ml-8 py-8">Beligum</h1>
-          <section className="flex justify-around">
-            <div>
-              <div className="single-country-list">
-                <p className="text-lg font-bold">Native name: </p>
-                <p className="text-light-bg-box">Belige</p>
-              </div>
-              <div className="single-country-list">
-                <p>Population:</p>
-                <p>12,342,343</p>
-              </div>
-              <div className="single-country-list">
-                <p>Region: </p>
-                <p>Europe</p>
-              </div>
-              <div className="single-country-list">
-                <p>Sub Region: </p>
-                <p>West europe</p>
-              </div>
-              <div className="single-country-list">
-                <p>Population density:</p>
-                <p>1273 km</p>
-              </div>
-            </div>
-            <div>
-              <div className="single-country-list">
-                <p>Top level: </p>
-                <p>Europe</p>
-              </div>
-              <div className="single-country-list">
-                <p>Currency: </p>
-                <p>West europe</p>
-              </div>
-              <div className="single-country-list">
-                <p>Capital: </p>
-                <p>Brussel</p>
-              </div>
-              <div className="single-country-list">
-                <p>Calling code:</p>
-                <p>+250</p>
-              </div>
-            </div>
-          </section>
-          <div className="flex gap-10 items-center justify-around mt-5">
-            <p>Border country</p>
-            <div className="flex gap-5">
-              <p>France</p>
-              <p>Uganda</p>
-              <p>Kenya</p>
-            </div>
-          </div>
-        </section>
-      </main> */}
     </>
   );
 }
