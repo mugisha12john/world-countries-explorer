@@ -104,16 +104,16 @@ export default function SingleCountry() {
                   Languages:
                 </span>
                 <div className="flex  gap-2">
-                  <span className="px-3 py-1 bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 text-slate-300">
+                  <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300">
                     Kinyarwanda
                   </span>
-                  <span className="px-3 py-1 bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 text-slate-300">
+                  <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300">
                     English
                   </span>
-                  <span className="px-3 py-1 bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 text-slate-300">
+                  <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300">
                     French
                   </span>
-                  <span className="px-3 py-1 bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 text-slate-300">
+                  <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300">
                     Kiswahili
                   </span>
                 </div>
@@ -123,16 +123,16 @@ export default function SingleCountry() {
                   Border Countries:
                 </span>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <span className="px-3 py-1 bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300 text-light-bg">
+                  <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300 ">
                     Uganda
                   </span>
-                  <span className="px-3 py-1 bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300 text-light-bg">
+                  <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300 ">
                     Tanzania
                   </span>
-                  <span className="px-3 py-1 bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300 text-light-bg">
+                  <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300 ">
                     Burundi
                   </span>
-                  <span className="px-3 py-1 bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300 text-light-bg">
+                  <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300 ">
                     DR Congo
                   </span>
                 </div>
