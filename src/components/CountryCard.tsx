@@ -46,7 +46,7 @@ export default function CountryCard({ singleCountry }: CountryCardProps) {
           </div>
 
           <Link
-            to="/single-country"
+            to={`/single-country?name=${singleCountry.name}&code=${singleCountry.alpha3Code}&city=${singleCountry.capital}`}
             aria-label="button"
             className="mt-6 dark:bg-dark-bg dark:text-white text-gray-800 text-sm font-semibold px-4 py-2 w-40 border border-gray-300 dark:border-gray-700 bg-light-input hover:opacity-90 transition-opacity cursor-pointer rounded"
           >

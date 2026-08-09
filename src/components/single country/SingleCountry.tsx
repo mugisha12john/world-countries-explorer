@@ -1,13 +1,23 @@
 import { Link, useLoaderData } from "react-router-dom";
 import MoveLeftIcon from "../../assets/MoveLeftIcon";
+import type { cities, Country, WeatherDTO } from "../../types/types";
 import SingleDetails from "./SingleDetails";
 import Weather from "./Weather";
 import LanguageBorderCard from "./LanguageBorderCard";
 import TopCities from "./TopCities";
 
+interface LoaderData {
+  countryInfo: Country;
+  borders: Country[];
+  cities: cities[];
+  weather: WeatherDTO;
+}
+
 export default function SingleCountry() {
-  const countrySingle = useLoaderData();
-  console.log(countrySingle);
+  const countrySingle = useLoaderData() as LoaderData;
+  const country = countrySingle.countryInfo;
+  const flagUrl = country?.flags?.svg || country?.flag || "";
+  const language = country.languages;
   return (
     <>
       <Link
@@ -21,8 +31,8 @@ export default function SingleCountry() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-5 aspect-4/3 w-full bg-[#2d3748] rounded-xl overflow-hidden border border-slate-700/50 flex flex-col justify-center items-center relative group shadow-lg">
               <img
-                src="https://flagcdn.com/w640/rw.png"
-                alt="Rwanda Flag"
+                src={flagUrl || "https://flagcdn.com/w640/rw.png"}
+                alt={`${country?.name || "Country"} Flag`}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -30,9 +40,11 @@ export default function SingleCountry() {
             <div className="lg:col-span-7  p-6 md:p-8 rounded-xl border border-slate-700/50 shadow-lg space-y-6">
               <div className="flex items-center justify-between border-b border-slate-700/60 pb-4">
                 <div>
-                  <h1 className="text-3xl font-bold tracking-tight ">Rwanda</h1>
+                  <h1 className="text-3xl font-bold tracking-tight ">
+                    {country?.name || "Country"}
+                  </h1>
                   <p className="text-sm dark:text-slate-400 font-bold mt-1">
-                    Republic of Rwanda &bull; Repubulika y'u Rwanda
+                    {country?.nativeName || "Country details"}
                   </p>
                 </div>
                 <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-3 py-1 rounded-full font-medium">
@@ -41,19 +53,26 @@ export default function SingleCountry() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-sm">
-                <SingleDetails />
+                <SingleDetails details={country} />
               </div>
               {/* weather */}
-              <Weather />
+              <Weather currentWeather={countrySingle.weather} />
               {/* languages */}
               <div className="space-y-2 pt-2  md:flex md:gap-2 ">
-                <LanguageBorderCard />
+                <LanguageBorderCard isBorder={false} languages={language} />
+              </div>
+              {/* borders */}
+              <div className="space-y-2 pt-2  md:flex md:gap-2 ">
+                <LanguageBorderCard
+                  isBorder={true}
+                  languages={countrySingle.borders}
+                />
               </div>
             </div>
           </div>
 
           <div className="dark:bg-dark-element p-6 md:p-8 rounded-xl border border-slate-700/50 shadow-lg space-y-4">
-            <TopCities />
+            <TopCities populatedCities={countrySingle.cities} />
           </div>
         </div>
       </div>

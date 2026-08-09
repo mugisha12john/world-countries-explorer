@@ -1,23 +1,48 @@
-export default function LanguageBorderCard() {
+import type { Country, Language } from "../../types/types";
+
+interface LanguageBorderCardProps {
+  isBorder: boolean;
+  languages?: Language[];
+  borders?: Country[];
+}
+export default function LanguageBorderCard({
+  isBorder,
+  languages,
+  borders,
+}: LanguageBorderCardProps) {
   return (
     <>
       <span className="text-sm dark:text-slate-400 font-bold block ">
-        Languages:
+        {isBorder ? "Borders" : "Languages"}
       </span>
-      <div className="flex  gap-2">
-        <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300">
-          Kinyarwanda
-        </span>
-        <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300">
-          English
-        </span>
-        <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300">
-          French
-        </span>
-        <span className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300">
-          Kiswahili
-        </span>
-      </div>
+      {languages && (
+        <div className="flex  gap-2">
+          {languages?.map((lang) => {
+            return (
+              <span
+                key={lang.name}
+                className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300"
+              >
+                {lang.name}
+              </span>
+            );
+          })}
+        </div>
+      )}
+      {borders && (
+        <div className="flex  gap-2">
+          {borders?.map((border) => {
+            return (
+              <span
+                key={border.name}
+                className="px-3 py-1 dark:bg-dark-element text-xs font-medium rounded-md border border-slate-700/60 dark:text-slate-300"
+              >
+                {border.nativeName}
+              </span>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 }
