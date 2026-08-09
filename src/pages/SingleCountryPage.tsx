@@ -1,4 +1,4 @@
-import SingleCountry from "../components/SingleCountry";
+import SingleCountry from "../components/single country/SingleCountry";
 
 export default function SingleCountryPage() {
   return (
