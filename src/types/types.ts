@@ -72,3 +72,25 @@ export interface Country {
   maps: MapLinks;
   populationDensity: number;
 }
+
+export interface City {
+  admin1code: string;
+  asciiName: string;
+  countryCode: string;
+  featureCode: string;
+  geonameId: number;
+  latitude: number;
+  longitude: number;
+  name: string;
+  population: number;
+  timezone: string;
+}
+
+export interface WeatherDTO {
+  condition: string;
+  city: string;
+  humidity: string;
+  tempC: string;
+  url: string;
+  timezone: string;
+}

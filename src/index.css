@@ -11,4 +11,9 @@
 body {
   @apply bg-light-bg text-light-text dark:bg-dark-bg dark:text-pure-white transition-colors duration-200 min-h-screen;
 }
+@layer components {
+  .single-country-list {
+    @apply flex justify-start items-center gap-2;
+  }
+}
 @variant dark (&:where(.dark, .dark *));

@@ -64,7 +64,7 @@ export default function Main() {
       {currentCountries?.length === 0 && (
         <Error error="No countries available for the selected filters." />
       )}
-      <div className="ml-8 mt-10 grid grid-cols-1  gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="ml-8 mr-8 mt-10 grid grid-cols-1  gap-10 md:grid-cols-2 lg:grid-cols-4">
         {currentCountries?.map((country) => {
           return (
             <div key={country.alpha3Code}>
