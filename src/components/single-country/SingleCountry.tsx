@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import MoveLeftIcon from "../../assets/MoveLeftIcon";
-import type { cities, Country, WeatherDTO } from "../../types/types";
+import type { City, Country, WeatherDTO } from "../../types/types";
 import SingleDetails from "./SingleDetails";
 import Weather from "./Weather";
 import LanguageBorderCard from "./LanguageBorderCard";
@@ -9,7 +9,7 @@ import TopCities from "./TopCities";
 interface LoaderData {
   countryInfo: Country;
   borders: Country[];
-  cities: cities[];
+  cities: City[];
   weather: WeatherDTO;
 }
 
@@ -31,7 +31,7 @@ export default function SingleCountry() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-5 aspect-4/3 w-full bg-[#2d3748] rounded-xl overflow-hidden border border-slate-700/50 flex flex-col justify-center items-center relative group shadow-lg">
               <img
-                src={flagUrl || "https://flagcdn.com/w640/rw.png"}
+                src={flagUrl}
                 alt={`${country?.name || "Country"} Flag`}
                 className="w-full h-full object-cover"
               />

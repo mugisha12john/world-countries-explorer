@@ -73,7 +73,7 @@ export interface Country {
   populationDensity: number;
 }
 
-export interface cities {
+export interface City {
   admin1code: string;
   asciiName: string;
   countryCode: string;

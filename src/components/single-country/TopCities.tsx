@@ -1,9 +1,9 @@
-import type { cities } from "../../types/types";
+import type { City } from "../../types/types";
 
-interface topCitiesProps {
-  populatedCities: cities[];
+interface TopCitiesProps {
+  populatedCities: City[];
 }
-export default function TopCities({ populatedCities }: topCitiesProps) {
+export default function TopCities({ populatedCities }: TopCitiesProps) {
   return (
     <>
       <div className="flex justify-between items-center border-b border-slate-700/60 pb-3">

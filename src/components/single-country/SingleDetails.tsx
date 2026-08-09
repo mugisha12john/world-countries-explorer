@@ -16,7 +16,7 @@ export default function SingleDetails({ details }: SingleDetailsProps) {
       <div>
         <span className="dark:text-slate-400 font-bold">Native Name:</span>{" "}
         <span className="font-medium dark:text-slate-200 ">
-          {details.name || "N/A"}
+          {details.nativeName || "N/A"}
         </span>
       </div>
       <div>

@@ -4,7 +4,7 @@ import Homepage from "./pages/Homepage";
 import SingleCountryPage from "./pages/SingleCountryPage";
 import NotFoundError from "./components/NotFoundError";
 import countryLoader from "./loader/SingleCountryLoader";
-import { SingleCountryError } from "./components/single country/SingleCountryError";
+import { SingleCountryError } from "./components/single-country/SingleCountryError";
 
 const router = createBrowserRouter([
   {
